@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         cyanplie: "#00df9a",
+        reds: "#FF0000",
       },
     },
 

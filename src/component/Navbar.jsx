@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -14,10 +14,12 @@ import logo from "../assets/edit-logo.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Badge from "@mui/material/Badge";
+import Cart from "./Cart";
 
 const Navbar = () => {
-  const cartItems = useSelector((state) => state.cart.cart);
-  console.log(cartItems);
+  // const cartItems = useSelector((state) => state.cart.cart);
+  // console.log(cartItems);
+
   const [nav, setNav] = useState(false);
   const [coms, setComs] = useState(false);
   const [show, setShow] = useState(true);
@@ -85,7 +87,7 @@ const Navbar = () => {
 
         <div className="py-[1.90rem] ml-6 pr-.5">
           <li className="ml-14">
-            <Link to="/CheckOut">
+            {/* <Link to="/CheckOut">
               <Badge
                 color="secondary"
                 badgeContent={cartItems.length}
@@ -93,10 +95,17 @@ const Navbar = () => {
               >
                 <AiOutlineShoppingCart size={24} />
               </Badge>
-            </Link>
-            {/* <a href="/CheckOut">
-              
-            </a> */}
+            </Link> */}
+            {/* <Badge
+              color="secondary"
+              badgeContent={cartItems.length}
+              variant="dot"
+            >
+              <Cart />
+            </Badge> */}
+            <div className="w-[50px]">
+              <Cart />
+            </div>
           </li>
         </div>
 
@@ -109,10 +118,16 @@ const Navbar = () => {
       </ul>
 
       {/* Phone Sidebar */}
-      <div className="md:hidden">
-        <div onClick={handleNav} className="block md:hidden">
-          {!nav ? <AiOutlineMenu size={20} /> : <AiOutlineMenu size={20} />}
+      <div className="md:hidden w-full">
+        <div className="flex justify-between ">
+          <div onClick={handleNav} className="block md:hidden pt-1.5">
+            {!nav ? <AiOutlineMenu size={20} /> : <AiOutlineMenu size={20} />}
+          </div>
+          <div>
+            <Cart />
+          </div>
         </div>
+
         <div
           className={
             nav
@@ -166,12 +181,7 @@ const Navbar = () => {
               </a>
             </li>
             <div className="flex items-center justify-center">
-              <li className="pr-4 py-3">
-                <a href="/CheckOut">
-                  <AiOutlineShoppingCart size={24} />
-                </a>
-              </li>
-              <li className="pl-4">
+              <li className="py-3 pl-2">
                 <Link to="/loginRegis">
                   <AiOutlineUser size={24} />
                 </Link>
