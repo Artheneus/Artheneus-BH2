@@ -1,4 +1,3 @@
-//sk_test_51PMMtz03zEvJzxxCendxgM02Gf2p4lm3xtiyUPh0BfwLxho6X44IfzxawBoGYN7KRPVzHQsE5rWO22eqtEk7aF8u002CUNq37z
 const express = require("express");
 var cors = require("cors");
 const stripe = require("stripe")(
