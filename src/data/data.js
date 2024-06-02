@@ -1,8 +1,10 @@
-// price_1PMN4I03zEvJzxxCiKQd9K9S
-// stripe_id: "price_1PMN2r03zEvJzxxCCLs0v054",
-
 const productsData = [
-  { id: "1", title: "Super Armory", price: 300000, dex: "300k idr" },
+  {
+    id: "price_1PMN2r03zEvJzxxCCLs0v054",
+    title: "Super Armory",
+    price: 300000,
+    dex: "300k idr",
+  },
   {
     id: "2",
     title: "Battle Hardened",
