@@ -50,7 +50,7 @@ const ProdsPrint = (props) => {
           <span className="text-[16pt] pt-1">{product.title}</span>
           <span className="pl-2">@{product.dex}</span>
         </div>
-        <div className="flex pt-1 justify-center mt-2">
+        <div className="flex pt-1 justify-center mt-2 mb-2">
           <button
             className="bg-black w-[50px] rounded-md font-sm mx-2 py-1 text-[#00df9a] items-center"
             onClick={() => cart.addOneToCart(product.id)}
@@ -67,7 +67,7 @@ const ProdsPrint = (props) => {
             -
           </button>
         </div>
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <button
             // onClick={() => dispatch(addtoCart({ title }))}
             onClick={() => cart.addOneToCart(product.id)}
@@ -75,8 +75,8 @@ const ProdsPrint = (props) => {
           >
             Add to Cart
           </button>
-        </div>
-        {handleRemoveBtn()}
+        </div> */}
+        <div className="my-1">{handleRemoveBtn()}</div>
       </div>
 
       {/* PC Mode */}
