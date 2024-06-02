@@ -26,6 +26,10 @@ const Cards = () => {
   const [showModal, setShowModal] = useState(false);
   const [showtab, setShowtab] = useState(1);
 
+  useEffect(() => {
+    showtab == 0;
+  }, []);
+
   const handleClose = () => setShowModal(false);
 
   // const title = () => {
@@ -34,18 +38,16 @@ const Cards = () => {
   //   });
   // };
 
-  useEffect(() => {
-    {
-      productsData.map((product) => {
-        const title = product.title;
-      });
-    }
-  }, []);
-
   //   focus:bg-[#00df9a] focus:text-black
   const handletab = (e) => {
     setShowtab(e);
   };
+
+  // useEffect(() => {
+  //   if (setShowtab > 0) {
+  //     return setShowtab();
+  //   }
+  // }, [setShowtab()]);
 
   return (
     <div id="registration" className="w-full pt-0.5 pb-0.5 bg-black">
@@ -82,9 +84,9 @@ const Cards = () => {
               {/* content 1 */}
               <div>
                 <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={showtab} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == showtab - 1) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -92,7 +94,7 @@ const Cards = () => {
                 </div>
                 <div className="px-4 pb-4 pt-4 bg-gray-300">
                   <div className="">
-                    <div className="w-[350px] ml-6 mb-3">
+                    <div className="w-[200px] ml-6 mb-3">
                       <img src={armory} alt="" />
                     </div>
                     <h1 className="font-bold ">Tournament Info</h1>
@@ -109,7 +111,7 @@ const Cards = () => {
                         <li>Venue :</li>
                         <div className="flex">
                           <li className="font-bold">Entry fee : </li>
-                          <li className="pl-2">800k idr </li>
+                          <li className="pl-2">300k idr </li>
                         </div>
                       </ul>
                     </div>
@@ -168,9 +170,9 @@ const Cards = () => {
               {/* content 1 */}
               <div>
                 <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={showtab} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == showtab - 1) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -178,7 +180,7 @@ const Cards = () => {
                 </div>
                 <div className="px-4 pb-4 pt-4 bg-gray-300">
                   <div className="">
-                    <div className="w-[350px] ml-6 mb-3">
+                    <div className="w-[200px] ml-6 mb-3">
                       <img src={BH} alt="" />
                     </div>
                     <h1 className="font-bold ">Tournament Info</h1>
@@ -299,9 +301,9 @@ const Cards = () => {
               {/* content 1 */}
               <div>
                 <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={showtab} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == showtab - 1) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -309,7 +311,7 @@ const Cards = () => {
                 </div>
                 <div className="px-4 pb-4 pt-4 bg-gray-300">
                   <div className="">
-                    <div className="w-[350px] ml-6 mb-3">
+                    <div className="w-[200px] ml-6 mb-3">
                       <img src={PQ} alt="" />
                     </div>
                     <h1 className="font-bold ">Tournament Info</h1>
@@ -426,9 +428,9 @@ const Cards = () => {
               {/* content 1 */}
               <div>
                 <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={showtab} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == showtab - 1) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -436,7 +438,7 @@ const Cards = () => {
                 </div>
                 <div className="px-4 pb-4 pt-4 bg-gray-300">
                   <div className="">
-                    <div className="w-[350px] pl-4 ml-6 mb-3">
+                    <div className="w-[200px] pl-4 ml-6 mb-3">
                       <img src={sigil} alt="" />
                     </div>
                     <h1 className="font-bold ">Tournament Info</h1>
@@ -529,9 +531,9 @@ const Cards = () => {
               {/* content 1 */}
               <div>
                 <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={showtab} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == showtab - 1) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -539,7 +541,7 @@ const Cards = () => {
                 </div>
                 <div className="px-4 pb-4 pt-4 bg-gray-300">
                   <div className="">
-                    <div className="w-[350px] pl-4 ml-6 mb-3">
+                    <div className="w-[200px] pl-4 ml-6 mb-3">
                       <img src={sigil} alt="" />
                     </div>
                     <h1 className="font-bold ">Tournament Info</h1>
@@ -630,22 +632,14 @@ const Cards = () => {
           >
             <div className="md:mt-0 divide-y divide-black text-md">
               {/* content 1 */}
-              <div
-                className={
-                  showtab === 6
-                    ? "block w-full pl-1 pr-1 md:hidden"
-                    : "hidden w-full md:hidden"
-                }
-              >
+              <div>
                 <div className="md:mt-0 divide-y divide-black text-md">
                   {/* content 1 */}
                   <div>
                     <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                      {productsData.map((product, id) => {
-                        if (product.id == showtab) {
-                          return (
-                            <ProductPrint key={showtab} product={product} />
-                          );
+                      {productsData.map((product, index) => {
+                        if (index == showtab - 1) {
+                          return <ProductPrint key={index} product={product} />;
                         } else {
                           null;
                         }
@@ -653,7 +647,7 @@ const Cards = () => {
                     </div>
                     <div className="px-4 pb-4 pt-4 bg-gray-300">
                       <div className="">
-                        <div className="w-[350px] pl-4 ml-6 mb-3">
+                        <div className="w-[200px] pl-4 ml-6 mb-3">
                           <img src={sigil} alt="" />
                         </div>
                         <h1 className="font-bold ">Tournament Info</h1>
@@ -750,9 +744,9 @@ const Cards = () => {
               {/* content 1 */}
               <div>
                 <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={showtab} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == showtab - 1) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -762,7 +756,7 @@ const Cards = () => {
                   <div className="">
                     <h1 className="font-bold ">Product Info</h1>
                     <p className="px-4 mt-2 mb-2">36x60cm rubber playmat</p>
-                    <div className="w-[350px] pl-4 ml-6 mb-3">
+                    <div className="w-[200px] pl-4 ml-6 mb-3">
                       <button onClick={() => setShowModal(true)}>
                         <img src={custPlay} alt="" />
                       </button>
@@ -811,9 +805,9 @@ const Cards = () => {
               {/* content 1 */}
               <div>
                 <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={showtab} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == showtab - 1) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -828,7 +822,7 @@ const Cards = () => {
                     <p className="px-4 mb-2 italic">
                       For 120 double-sleeved cards or 80 Cards + 7 Mininaps
                     </p>
-                    <div className="w-[400px] mb-3">
+                    <div className="w-[250px] mb-3">
                       <button onClick={() => setShowModal(true)}>
                         <img src={custCase} alt="" />
                       </button>
@@ -844,18 +838,48 @@ const Cards = () => {
                         <p className="pr-4">300k idr</p>
                       </div>
                       <p>Variance : </p>
-                      <div className="flex justify-center">
-                        <img className="w-[100px] mx-3 mt-3" src={GRE} alt="" />
-                        <img className="w-[100px] mx-3 mt-3" src={YEL} alt="" />
-                        <img className="w-[100px] mx-3 mt-3" src={RED} alt="" />
-                      </div>
-                      <div className="flex justify-center">
-                        <img className="w-[100px] mx-3 mt-3" src={BLK} alt="" />
-                        <img className="w-[100px] mx-3 mt-3" src={PLP} alt="" />
-                        <img className="w-[100px] mx-3 mt-3" src={GRY} alt="" />
-                      </div>
-                      <div className="flex justify-start">
-                        <img className="w-[100px] mx-4 mt-3" src={BLU} alt="" />
+                      <div className="w-[300px]">
+                        <div className="flex justify-start">
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={GRE}
+                            alt=""
+                          />
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={YEL}
+                            alt=""
+                          />
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={RED}
+                            alt=""
+                          />
+                        </div>
+                        <div className="flex justify-start">
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={BLK}
+                            alt=""
+                          />
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={PLP}
+                            alt=""
+                          />
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={GRY}
+                            alt=""
+                          />
+                        </div>
+                        <div className="flex justify-start">
+                          <img
+                            className="w-[100px] mx-4 mt-3"
+                            src={BLU}
+                            alt=""
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -893,9 +917,9 @@ const Cards = () => {
               {/* content 1 */}
               <div>
                 <div className="w-full justify-center text-center bg-gray-400 px-4 py-2 font-medium text-black">
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={showtab} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == showtab - 1) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -911,7 +935,7 @@ const Cards = () => {
                     <p className="px-4 mb-2 italic">
                       For 120 double-sleeved cards or 80 Cards + 7 Mininaps
                     </p>
-                    <div className="w-[400px] mb-3">
+                    <div className="w-[250px] mb-3">
                       <button onClick={() => setShowModal(true)}>
                         <img src={multi} alt="" />
                       </button>
@@ -927,18 +951,48 @@ const Cards = () => {
                         <p className="pr-4">550k idr</p>
                       </div>
                       <p>Variance : </p>
-                      <div className="flex justify-center">
-                        <img className="w-[100px] mx-3 mt-3" src={GRE} alt="" />
-                        <img className="w-[100px] mx-3 mt-3" src={YEL} alt="" />
-                        <img className="w-[100px] mx-3 mt-3" src={RED} alt="" />
-                      </div>
-                      <div className="flex justify-center">
-                        <img className="w-[100px] mx-3 mt-3" src={BLK} alt="" />
-                        <img className="w-[100px] mx-3 mt-3" src={PLP} alt="" />
-                        <img className="w-[100px] mx-3 mt-3" src={GRY} alt="" />
-                      </div>
-                      <div className="flex justify-start">
-                        <img className="w-[100px] mx-4 mt-3" src={BLU} alt="" />
+                      <div className="w-[300px]">
+                        <div className="flex justify-start">
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={GRE}
+                            alt=""
+                          />
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={YEL}
+                            alt=""
+                          />
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={RED}
+                            alt=""
+                          />
+                        </div>
+                        <div className="flex justify-start">
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={BLK}
+                            alt=""
+                          />
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={PLP}
+                            alt=""
+                          />
+                          <img
+                            className="w-[100px] mx-3 mt-3"
+                            src={GRY}
+                            alt=""
+                          />
+                        </div>
+                        <div className="flex justify-start">
+                          <img
+                            className="w-[100px] mx-4 mt-3"
+                            src={BLU}
+                            alt=""
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -967,9 +1021,9 @@ const Cards = () => {
                   {/* <span className="pt-1">Super Armory</span>
 
                   <p className="py-1 ml-96 pl-12">@300k Idr</p> */}
-                  {productsData.map((product, id) => {
-                    if (product.id == showtab) {
-                      return <ProductPrint key={id} product={product} />;
+                  {productsData.map((product, index) => {
+                    if (index == 0) {
+                      return <ProductPrint key={index} product={product} />;
                     } else {
                       null;
                     }
@@ -1039,6 +1093,7 @@ const Cards = () => {
 
           {/* Battle Hardened */}
           <div
+            //This is for buttons function in a way
             className={
               showtab === 2
                 ? "hidden md:block w-full pl-1 pr-1"
@@ -1050,9 +1105,9 @@ const Cards = () => {
               <div>
                 <>
                   <div className="flex w-full justify-between text-left bg-gray-400 px-4 py-2 font-medium ">
-                    {productsData.map((product, id) => {
-                      if (product.id == showtab) {
-                        return <ProductPrint key={id} product={product} />;
+                    {productsData.map((product, index) => {
+                      if (index == 1) {
+                        return <ProductPrint key={index} product={product} />;
                       } else {
                         null;
                       }
@@ -1165,9 +1220,9 @@ const Cards = () => {
               <div>
                 <>
                   <div className="flex w-full justify-between text-left bg-gray-400 px-4 py-2 font-medium ">
-                    {productsData.map((product, id) => {
-                      if (product.id == showtab) {
-                        return <ProductPrint key={id} product={product} />;
+                    {productsData.map((product, index) => {
+                      if (index == 2) {
+                        return <ProductPrint key={index} product={product} />;
                       } else {
                         null;
                       }
@@ -1283,9 +1338,9 @@ const Cards = () => {
               <div>
                 <>
                   <div className="flex w-full justify-between text-left bg-gray-400 px-4 py-2 font-medium ">
-                    {productsData.map((product, id) => {
-                      if (product.id == showtab) {
-                        return <ProductPrint key={id} product={product} />;
+                    {productsData.map((product, index) => {
+                      if (index == 3) {
+                        return <ProductPrint key={index} product={product} />;
                       } else {
                         null;
                       }
@@ -1368,9 +1423,9 @@ const Cards = () => {
               <div>
                 <>
                   <div className="flex w-full justify-between text-left bg-gray-400 px-4 py-2 font-medium ">
-                    {productsData.map((product, id) => {
-                      if (product.id == showtab) {
-                        return <ProductPrint key={id} product={product} />;
+                    {productsData.map((product, index) => {
+                      if (index == 4) {
+                        return <ProductPrint key={index} product={product} />;
                       } else {
                         null;
                       }
@@ -1453,9 +1508,9 @@ const Cards = () => {
               <div>
                 <>
                   <div className="flex w-full justify-between text-left bg-gray-400 px-4 py-2 font-medium ">
-                    {productsData.map((product, id) => {
-                      if (product.id == showtab) {
-                        return <ProductPrint key={id} product={product} />;
+                    {productsData.map((product, index) => {
+                      if (index == 5) {
+                        return <ProductPrint key={index} product={product} />;
                       } else {
                         null;
                       }
@@ -1536,9 +1591,9 @@ const Cards = () => {
               <div>
                 <>
                   <div className="flex w-full justify-between text-left bg-gray-400 px-4 py-2 font-medium ">
-                    {productsData.map((product, id) => {
-                      if (product.id == showtab) {
-                        return <ProductPrint key={id} product={product} />;
+                    {productsData.map((product, index) => {
+                      if (index == showtab - 1) {
+                        return <ProductPrint key={index} product={product} />;
                       } else {
                         null;
                       }
@@ -1547,7 +1602,7 @@ const Cards = () => {
                   <div className="px-4 pb-4 pt-4 bg-gray-300">
                     <div className="">
                       <h1 className="font-bold ">Product Info</h1>
-                      <p className="px-4 mt-2 mb-2">36x60cm rubber playmat</p>
+                      <p className="px-4 mt-2 mb-2">35x60cm rubber playmat</p>
 
                       <button onClick={() => setShowModal(true)}>
                         <img
@@ -1587,9 +1642,9 @@ const Cards = () => {
               <div>
                 <>
                   <div className="flex w-full justify-between text-left bg-gray-400 px-4 py-2 font-medium ">
-                    {productsData.map((product, id) => {
-                      if (product.id == showtab) {
-                        return <ProductPrint key={id} product={product} />;
+                    {productsData.map((product, index) => {
+                      if (index == showtab - 1) {
+                        return <ProductPrint key={index} product={product} />;
                       } else {
                         null;
                       }
@@ -1653,9 +1708,9 @@ const Cards = () => {
               <div>
                 <>
                   <div className="flex w-full justify-between text-left bg-gray-400 px-4 py-2 font-medium ">
-                    {productsData.map((product, id) => {
-                      if (product.id == showtab) {
-                        return <ProductPrint key={id} product={product} />;
+                    {productsData.map((product, index) => {
+                      if (index == showtab - 1) {
+                        return <ProductPrint key={index} product={product} />;
                       } else {
                         null;
                       }
@@ -1665,7 +1720,7 @@ const Cards = () => {
                     <div className="">
                       <h1 className="font-bold ">Product Info</h1>
                       <p className="px-4 mt-2 ">
-                        Leather-printed magnetic hardcase and 36x60cm rubber
+                        Leather-printed magnetic hardcase and 35x60cm rubber
                         playmat
                       </p>
                       <p className="px-4 mb-2 italic">
