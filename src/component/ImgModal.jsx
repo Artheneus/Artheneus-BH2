@@ -13,7 +13,13 @@ const ImgModal = ({ visible, onClose, img }) => {
         </div>
 
         <div className="p-2 rounded bg-white">
-          <div>
+          {/* Mobile */}
+          <div className="block md:hidden">
+            <img className="w-[300px]" src={img} alt="" />
+          </div>
+
+          {/* PC */}
+          <div className="hidden md:block">
             <img className="w-[700px]" src={img} alt="" />
           </div>
         </div>
